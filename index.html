@@ -58,7 +58,7 @@
 											<li>Such network learns to act or perform tasks by considering examples without being pre-programmed with specific for these tasks rules.</li>
 										</ul>
 
-										<h5>Brain.js</h5>
+										<h5>Brain.js:</h5>
 										<ul>
 											<li>JavaScript library that provides multiple neural network implementation.</li>
 											<li>In the code, we need to instantiate neural network.</li>
@@ -78,6 +78,33 @@
 											<li>This process of forward propagation and back propagation continues until model reachs minimal error overall.</li>
 										</ul>
 
+										<h5>Example:</h5>
+										<ul>
+											<li>We have a set of football teams in a one group. Teams can be identified with integer.</li>
+											<li>There are 4 teams: <code>[1,2,3,4]</code></li>
+											<li>Data input consists of two elements list [x, y] that stands for a match x vs y.</li>
+											<li>Data output: [0] means x wins, [1] means y wins.</li>
+											<li>Code:
+												<br>
+												<code>const brain = require('brain.js');</code><br>
+												<code>const net = new brain.NeuralNetwork({hiddenLayers :[3]});</code><br>
+												<br>
+												<code>const data = [</code><br>&nbsp&nbsp&nbsp
+													<code>{input : [1,3], output: [1]},</code><br>&nbsp&nbsp&nbsp
+													<code>{input : [2,1], output: [0]},</code><br>&nbsp&nbsp&nbsp
+													<code>{input : [3,4], output: [1]},</code><br>&nbsp&nbsp&nbsp
+													<code>{input : [3,2], output: [1]},</code><br>&nbsp&nbsp&nbsp
+													<code>{input : [2,4], output: [1]}</code><br>
+												<code>];</code><br>
+												<br>
+												<code>net.train(_Data);</code><br>
+												<code>console.log(net.run([1,4]));</code><br>
+												<br>
+												<code>[ 0.982649028301239 ]</code>
+											</li>
+											<li></li>
+										</ul>
+
 									</header>
 								</div>
 							</section>
@@ -90,6 +117,7 @@
 									<ul class="feature-icons">
 										<li class="icon solid fa-check">NodeJS</li>
 										<li class="icon solid fa-check">Brain.js</li>
+										<li class="icon solid fa-check">NeuralNetwork</li>
 									</ul>
 								</div>
 							</section>
