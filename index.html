@@ -55,18 +55,27 @@
 										<h5>Neural Network:</h5>
 										<ul>
 											<li>It imitates bilogical human's neural network that has some level of ability to learn.</li>
-											<li>Such network learns to act or perform tasks by considering examples without being pre-programmed with specific for that tasks rules.</li>
+											<li>Such network learns to act or perform tasks by considering examples without being pre-programmed with specific for these tasks rules.</li>
 										</ul>
 
 										<h5>Brain.js</h5>
 										<ul>
 											<li>JavaScript library that provides multiple neural network implementation.</li>
 											<li>In the code, we need to instantiate neural network.</li>
-											<li>Once instantation, we can state number of hidden layers which are between input and output layers.
+											<li>While instantation, we can state number of hidden layers which are between input and output layers.
 												They do all the work e.g. when recognizing picutres, hidden layers match pixels into edges, then edges into patterns then patterns to the final figure.</li>
 											<li>Neural network object has train() method which accepts all the training examples at once.</li>
 											<li>The output of training not always is 0 or 1 - win or lose, dog or cat, score or miss.</li>
 											<li>The output is the probability that based on examples of all matchs so far - a chosen football team wins or loses.</li>
+										</ul>
+
+										<h5>Forward-propagation and back-propagation:</h5>
+										<ul>
+											<li>We propagate forwards through neurons to get the output from each one and compare it with the expected value to get the error.</li>
+											<li>In order to minimize the error, we propagate backwards using gradient decent (finding min of error function) to update new weights (each neuron connection has a weigth that multiplies input value).</li>
+											<li>Once new weight are set, we propagate forwards to see how well those weights are performing finding new error.</li>
+											<li>Once again we want to minimize newly-found error by propagating network backwards to update lastly changes weights.</li>
+											<li>This process of forward propagation and back propagation continues until model reachs minimal error valye overall.</li>
 										</ul>
 
 									</header>
