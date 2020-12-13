@@ -80,7 +80,7 @@
 
 										<h5>Example:</h5>
 										<ul>
-											<li>We have a set of football teams in a one group. Teams can be identified with integer.</li>
+											<li>We have a set of football teams in a one group. Teams can be identified with integers.</li>
 											<li>There are 4 teams: <code>[1,2,3,4]</code></li>
 											<li>Data input consists of two elements list [x, y] that stands for a match x vs y.</li>
 											<li>Data output: [0] means x wins, [1] means y wins.</li>
@@ -107,6 +107,28 @@
 											<li>When we have a match of 1 team vs 4 team then based on historical matches there is almost 100% probability of 4 team's win.</li>
 										</ul>
 
+										<h5>Brain.js with string data:</h5>
+										<ul>
+											<li>As you could see Brain.js in the example above, when training neural network, it accepts only inputs of a number between 0 and 1.</li>
+											<li>When working with strings we need to come up with model to convert string data into numbers between 0 and 1 so that we can get list of tuples:
+												<br>
+												<code>[input, expected_output]</code><br>
+												where:<br>
+												<b>input</b> is a list of numbers between 0 and 1 representing the words,<br>
+												<b>output</b> is one number between 0 and 1 representing how close the sentence is to your expected label.
+											</li>
+											<li>We can use <b>Recurrent Neural Networks (RNN)</b> that enables us to train model using string data which actually are sequence of characters.</li>
+											<li>The power of RNN is keeping track of arbitrary long-term dependencies in the input sequences.</li>
+											<li>In fact, I use <b>Long short-term memory (LSTM)</b> which is a special kind of RNN.</li>
+										</ul>
+
+										<h5>LSTM:</h5>
+										<ul>
+											<li>LSTM can not only process single data points such as images (like standard neural networks), but also entire sequences of data (such as speech or video).</li>
+											<li>Basic common element of LSTM is the cell that can process data sequentially and keep its hidden state through time.</li>
+											<li>Time varialbe and state remebering is the key advantagous of LSTM.</li>
+										</ul>
+
 									</header>
 								</div>
 							</section>
@@ -129,26 +151,11 @@
 								<div class="container">
 									<h3>Demo</h3>
 
-									<h5>Brain.js with string data:</h5>
+									<h5>No LSTM solution:</h5>
 									<ul>
-										<li>As you could see Brain.js in the example above, when training neural network, it accepts only inputs of a number between 0 and 1.</li>
-										<li>When working with strings we need to come up with model to convert string data into numbers between 0 and 1 so that we can get list of tuples:
-											<br>
-											<code>[input, expected_output]</code><br>
-											where:<br>
-											<b>input</b> is a list of numbers between 0 and 1 representing the words,<br>
-											<b>output</b> is one number between 0 and 1 representing how close the sentence is to your expected label.
-										</li>
-										<li>In the project however, I use <b>Recurrent Neural Networks (RNN)</b> that enables us to train model using string data which actually are sequence of characters.</li>
-										<li>The power of RNN is keeping track of arbitrary long-term dependencies in the input sequences.</li>
-										<li>In fact, I use <b>Long short-term memory (LSTM)</b> which is a special kind of RNN.</li>
-									</ul>
-
-									<h5>LSTM:</h5>
-									<ul>
-										<li>LSTM can not only process single data points such as images (like standard neural networks), but also entire sequences of data (such as speech or video).</li>
-										<li>Basic common element of LSTM is the cell that can process data sequentially and keep its hidden state through time.</li>
-										<li>Time varialbe and state remebering is the key advantagous of LSTM.</li>
+										<li>We will be labeling each sentence as positive or negative.</li>
+										<li>As Brain.js accept only numbers we need to convert every character in the sentences into unique numerical values.</li>
+										<li>...</li>
 									</ul>
 
 								</div>
