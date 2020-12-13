@@ -127,6 +127,15 @@
 											<li>LSTM can not only process single data points such as images (like standard neural networks), but also entire sequences of data (such as speech or video).</li>
 											<li>Basic common element of LSTM is the cell that can process data sequentially and keep its hidden state through time.</li>
 											<li>Time varialbe and state remebering is the key advantagous of LSTM.</li>
+											<li>Code:
+												<br>
+												<code>const brain = require('brain.js');</code><br>
+												<code>var net = new brain.recurrent.LSTM();</code><br>
+												<code>training_data = [ {input: "training_sentence", output:"labelX"} ... ];</code>
+												<code>net.train(training_data);</code><br>
+												<code>new_output = net.run("example sentence I want ot lanbel");</code><br>
+												<code>console.log(new_output);</code>
+											</li>
 										</ul>
 
 									</header>
