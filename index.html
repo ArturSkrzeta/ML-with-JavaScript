@@ -107,18 +107,6 @@
 											<li>When we have a match of 1 team vs 4 team then based on historical matches there is almost 100% probability of 4 team's win.</li>
 										</ul>
 
-										<h5>Brain.js with string data:</h5>
-										<ul>
-											<li>As you can see Brain.js, when training neural network, accepts only inputs of a number between 0 and 1.</li>
-											<li>When working with strings we need to come up with model to convert string data into numbers between 0 and 1 so that we can get list of tuples:
-												<br>
-												<code>[input, expected_output]</code><br>
-												where:<br>
-												<b>input</b> is a list of numbers between 0 and 1 representing the words,<br>
-												<b>output</b> is one number between 0 and 1 representing how close the sentence is to your expected label.
-											</li>
-										</ul>
-
 									</header>
 								</div>
 							</section>
@@ -140,10 +128,20 @@
 							<section id="three">
 								<div class="container">
 									<h3>Demo</h3>
-									<h5>...</h5>
+
+									<h5>Brain.js with string data:</h5>
 									<ul>
-										<li>...</li>
+										<li>As you could see Brain.js in the example above, when training neural network, it accepts only inputs of a number between 0 and 1.</li>
+										<li>When working with strings we need to come up with model to convert string data into numbers between 0 and 1 so that we can get list of tuples:
+											<br>
+											<code>[input, expected_output]</code><br>
+											where:<br>
+											<b>input</b> is a list of numbers between 0 and 1 representing the words,<br>
+											<b>output</b> is one number between 0 and 1 representing how close the sentence is to your expected label.
+										</li>
+										<li>In the project however, I use Recurrent Neural Networks that enables us to train model using string data.</li>
 									</ul>
+
 								</div>
 							</section>
 
