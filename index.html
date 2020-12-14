@@ -118,17 +118,41 @@
 												<b>output</b> is one number between 0 and 1 representing how close the sentence is to your expected label.
 											</li>
 											<li>We can use <b>Recurrent Neural Networks (RNN)</b> that enables us to train model using string data which actually are sequence of characters.</li>
-
 										</ul>
 
 										<h5>RNN:</h5>
 										<ul>
-											<li>RNN is very helpful when we face sequence data like strings.</li>
-											<li>It's derived from feedforward networks.
-												<br><br>
-												<img src="images/rnn.JPG" width="600"><span style="font-size:12px">source: AI Wiki</span>
-											</li>
-											<li>The power of RNN is keeping track of arbitrary long-term dependencies in the input sequences.</li>
+											<li>RNN is very helpful when we face sequential data like time series, speech, text, financial data, audio, video, weather and more.</li>
+											<li>It's derived from feedforward networks.</li>
+										</ul>
+
+										<table>
+											<thead>
+												<th>Recurrent Neural Network</th>
+												<th>Feed-forward Neural Network</th>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Information cycles through neural network in a loop.</td>
+													<td>Information only moves in one direction:<br>input layer >> hidden layers >> output layer</td>
+												</tr>
+												<tr>
+													<td>Information cycles in a node like a loop. Node produces output, copies that output and loops it back keeping track of all of them.</td>
+													<td>Information never touches a node twice. Output goes to output layer directly.</td>
+												</tr>
+												<tr>
+													<td>It has internal memory of received inputs and produced outputs.</td>
+													<td>No internal memory of received input.</td>
+												</tr>
+												<tr>
+													<td>It considers current input and also what it has learned from the inputs it received previously.</td>
+													<td>It only considers current input at the moment so it can't remember anything what happened in the past.</td>
+												</tr>
+											</tbody>
+										</table>
+										<img src="images/rnn.JPG" width="60
+										0"><span style="font-size:12px">source: AI Wiki</span>
+										<ul>
 											<li>Special kind of RNN is <b>Long short-term memory (LSTM)</b></li>
 										</ul>
 
