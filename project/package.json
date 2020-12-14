@@ -1,0 +1,15 @@
+{
+  "name": "brainjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./main.js localhost 3080"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "brain.js": "^2.0.0-beta.2",
+    "nodemon": "^2.0.6"
+  }
+}
