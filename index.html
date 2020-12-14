@@ -98,7 +98,7 @@
 													<code>{input : [2,4], output: [1]}</code><br>
 												<code>];</code><br>
 												training neural network:<br>
-												<code>net.train(_Data);</code><br>
+												<code>net.train(data);</code><br>
 												giving new sample:<br>
 												<code>console.log(net.run([1,4]));</code><br>
 												outcome:<br>
@@ -118,8 +118,18 @@
 												<b>output</b> is one number between 0 and 1 representing how close the sentence is to your expected label.
 											</li>
 											<li>We can use <b>Recurrent Neural Networks (RNN)</b> that enables us to train model using string data which actually are sequence of characters.</li>
+
+										</ul>
+
+										<h5>RNN:</h5>
+										<ul>
+											<li>RNN is very helpful when we face sequence data like strings.</li>
+											<li>It's derived from feedforward networks.
+												<br>
+												<img src="images/rnn.JPG"><span style="font-size:12px">source: AI Wiki</span>
+											</li>
 											<li>The power of RNN is keeping track of arbitrary long-term dependencies in the input sequences.</li>
-											<li>In fact, I use <b>Long short-term memory (LSTM)</b> which is a special kind of RNN.</li>
+											<li>Special kind of RNN is <b>Long short-term memory (LSTM)</b></li>
 										</ul>
 
 										<h5>LSTM:</h5>
@@ -133,7 +143,7 @@
 												<code>var net = new brain.recurrent.LSTM();</code><br>
 												<code>training_data = [ {input: "training_sentence", output:"labelX"}, ... ];</code>
 												<code>net.train(training_data);</code><br>
-												<code>new_output = net.run("example sentence I want ot label");</code><br>
+												<code>new_output = net.run("example sentence I want to label");</code><br>
 												<code>console.log(new_output);</code>
 											</li>
 										</ul>
