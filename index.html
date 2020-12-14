@@ -193,12 +193,73 @@
 								<div class="container">
 									<h3>Demo</h3>
 
-									<h5>No LSTM solution:</h5>
+									<h5>My own way:</h5>
 									<ul>
-										<li>We will be labeling each sentence as positive or negative.</li>
-										<li>As Brain.js accept only numbers we need to convert every character in the sentences into unique numerical values.</li>
-										<li>...</li>
+										<li>Regardless of therotical intro about RNN and LST, I decided to code my way of processing sequential data.</li>
+										<li>As Brain.js accept only numbers we need to convert every single character of a sentence into unique numerical values.</li>
+										<li>Program will be converting collection of strings into collection of numbers.</li>
 									</ul>
+
+									<h5>Constraints:</h5>
+									<ul>
+										<li>Count of numerical representations of a characters in every input needs to be as the same as the longest input:
+											<br>
+											string 1: <code>'Hello'</code> numerical representation: <code>[0.32, 0.55, 0.51, 0.90, 0.72]</code><br>
+											string 2: <code>'Hi'</code> numerical representation: <code>[0.44, 0.14, 0.00, 0.00, 0.00]</code>
+										</li>
+										<li>Missing characters are filled up with zeros in the input.</li>
+										<li>In that way we achieve the same size of each input.</li>
+									</ul>
+
+									<h5>How it works:</h5>
+									<ul>
+										<li>Here we have a set of inputs with corresponding outputs:
+											<br>
+											<code>const training_data = [</code><br>&nbsp&nbsp
+												<code>{ input: [0,1,0], output: {zero:1}},</code><br>&nbsp&nbsp
+												<code>{ input: [0,1,1], output: {zero:1}},</code><br>&nbsp&nbsp
+												<code>{ input: [0,0,0], output: {zero:1}},</code><br>&nbsp&nbsp
+												<code>{ input: [1,1,0], output: {one:1}},</code><br>&nbsp&nbsp
+												<code>{ input: [1,0,0], output: {one:1}},</code><br>&nbsp&nbsp
+												<code>{ input: [1,0,1], output: {one:1}},</code><br>&nbsp&nbsp
+												<code>{ input: [1,1,1], output: {one:1}}</code><br>
+											<code>];</code>
+										<li>Each input is a set of 3 integers what fulfils the size constraint.</li>
+										<li>We have to claases of output zero and one.</li>
+										<li>Basically at first sight we can say that if input starts with 1 as the first element then it gets label 'one', analogously for inputs starting with 0 - they gets label 'zero'</li>
+										<li>Neural Network sees this so when it gets new input that hasn't seen during training i.e.
+											<br>
+											<code>[0,0,1]</code>
+											<br>
+											it returns probability:
+											<br>
+											<code>{ one: 0.12, zero: 0.98 }</code><br>
+											which says that it's almost 100% sure that given input can be labeled with 'zero' and minimum changes for labeling it as 'one'.
+										</li>
+										<li>In this way we can simply explain how it works and to test it out - it's like a 'Hello World' check for running neural network first time.</li>
+										<li>In the project I follow the same rule of putting list of numbers as inputs - they will be representing sentences, and assigning to them appropraite input of <code>{positive:1}</code> or <code>{negative:1}</code> during neural model training.</li>
+									</ul>
+
+									<h5>Process step by step:</h5>
+									<ol>
+										<li>Convering all the sentences into collection of numerical values.</li>
+										<li>Finding the longest sentence and taking its characters count.</li>
+										<li>Making all collection of numbers as the same size as the longest one by appending zeros:
+											<br><br>
+											<img src="images/fixedinput.JPG">
+											<br>
+											- this input of numbers represents sentence: "I am very happy"
+										</li>
+										<li>Putting fixed in size inputs through neural network for training. Program logs iterations and how it reduces training error:
+											<br><br>
+											<img src="images/training.JPG">
+										</li>
+										<li>The final step is providing a new sentence: <code>'This is wrong'</code> which will be encoded by program into collection of numbers as the inputs before.</li>
+										<li>Program returns probabilities:
+											<br><br>
+											<img src="images/probability.JPG">
+										</li>
+									</ol>
 
 								</div>
 							</section>
